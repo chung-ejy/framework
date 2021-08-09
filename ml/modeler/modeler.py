@@ -77,7 +77,7 @@ class Modeler(object):
             model = gs.best_estimator_
             return {"api":"xgb","model":model,"score":score}
         except Exception as e:
-            return {"api":"xgb","model":str(e),"score":9999}
+            return {"api":"xgb","model":str(e),"score":-99999}
     
     @classmethod
     def xgb_classify(self,data,multioutput):
@@ -97,7 +97,7 @@ class Modeler(object):
             score = accuracy_score(gs.predict(X_test),y_test)
             return {"api":"xgb","model":model,"score":score}
         except Exception as e:
-            return {"api":"xgb","model":str(e),"score":-9999}
+            return {"api":"xgb","model":str(e),"score":-99999}
     
     @classmethod
     def sk_model(self,data,deep):
@@ -197,7 +197,7 @@ class Modeler(object):
             results = model.evaluate(tf.stack(X_test),tf.stack(y_test))
             return {"api":"tf","model":model,"score":results[1]/100}
         except Exception as e:
-            return {"api":"tf","model":str(e),"score":-9999}
+            return {"api":"tf","model":str(e),"score":-99999}
     
     @classmethod
     def tf_classify(self,refined):
@@ -218,7 +218,7 @@ class Modeler(object):
             results = model.evaluate(tf.stack(X_test),tf.stack(y_test))
             return {"api":"tf","model":model,"score":results[1]}
         except Exception as e:
-            return {"api":"tf","model":str(e),"score":-9999}
+            return {"api":"tf","model":str(e),"score":-99999}
 
     @classmethod
     def linear_split(self,data):
