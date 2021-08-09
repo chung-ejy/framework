@@ -1,7 +1,7 @@
 import React, {useContext,useEffect,Fragment} from 'react';
 import DataContext from "../../context/data/dataContext"
 import Alert from "../alerts/Alert"
-import Sentiment from '../sentiment/Sentiment';
+// import Sentiment from '../sentiment/Sentiment';
 import Form from '../data/Form';
 
 const Data = () => {
@@ -32,8 +32,8 @@ const Data = () => {
                             <h1 className="card-title text-center mx-2">
                             {title[0].toUpperCase() + title.slice(1)}
                             </h1>
-                            {/* <Sentiment data={data} />
-                            <Form data={data}/> */}
+                            {/* <Sentiment data={data} /> */}
+                            <Form data={data}/>
                         </Fragment>
 
                     )

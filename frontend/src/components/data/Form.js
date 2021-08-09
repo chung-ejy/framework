@@ -23,37 +23,21 @@ const Form = ({data}) => {
             </h5>
             <table className="table table-responsive-sm">
                 <tbody>
-                    <tr>
-                        <td>data</td>
-                        <td>{data.data == 0 ? "Fake" : "Legit"}</td>
-                    </tr>
-                    <tr>
-                        <td>Polarity</td>
-                        <td>{data.polarity}</td>
-                    </tr>
-                    <tr>
-                        <td>Subjectivity</td>
-                        <td>{data.subjectivity}</td>
-                    </tr>
-                    <tr>
-                        <td>Title Polarity</td>
-                        <td>{data.tpolarity}</td>
-                    </tr>
-                    <tr>
-                        <td>Title Subjectivity</td>
-                        <td>{data.tsubjectivity}</td>
-                    </tr>
+                    {Object.keys(data).map(key => (
+                        <tr>
+                            <td>{key}</td>
+                            <td>{data[key]}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <input onChange={onChange} className="form-control" 
-                    name="title" placeholder="headline" type="text" value={title} />
-                </div>
-                <div className="form-group">
-                <input onChange={onChange} className="form-control" 
-                    name="text" placeholder="article text" type="text" value={text} />
-                </div>
+                {Object.keys(state).map(key =>(
+                    <div className="form-group">
+                        <input onChange={onChange} className="form-control" 
+                        name={key} placeholder={key} type={typeof(state[key]) === typeof("string") ? "text": "number"} value={state[key]} />
+                    </div>
+                ))}
                 <div className="form-group">
                     <button type="submit" class="btn btn-primary form-control">Classify</button>
                 </div>

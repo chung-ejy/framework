@@ -11,7 +11,6 @@ export const App = () => {
             <Alert />
             <div className="container-sm align-middle">
                 <Data/>
-                {/* <h1>Hello World</h1>             */}
             </div>
         </DataState>
     )
