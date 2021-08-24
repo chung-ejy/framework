@@ -1,0 +1,1 @@
+webpack --mode development --watch ./frontend/src/index.js --output-path ./frontend/static/frontend/
