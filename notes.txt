@@ -1,0 +1,19 @@
+1. package.json code
+"scripts": {
+    "dev": "webpack --mode development --watch ./frontend/src/index.js --output-path ./frontend/static/frontend/",
+    "build": "webpack --mode production ./frontend/src/index.js --output-path ./frontend/static/frontend/"
+  },
+
+2. settings.py code 
+
+add rest_framework, frontend, backend
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+import django_heroku
+django_heroku.settings(locals())
+
+3. update the Procfile app name
+
+
