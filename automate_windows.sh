@@ -15,14 +15,15 @@ cp -r ~/Desktop/projects/framework/framework/backend/urls.py ./backend/
 cp -r ~/Desktop/projects/framework/framework/backend/views.py ./backend/
 cp -r ~/Desktop/projects/framework/framework/framework/urls.py ./"$1"/
 cp -r ~/Desktop/projects/framework/framework/framework/urls.py ./"$1"/
+cd ../
 cp -r ~/Desktop/projects/framework/.babelrc .
 cp -r ~/Desktop/projects/framework/.gitignore .
-cp -r ~/Desktop/projects/framework/node_script .
 cp -r ~/Desktop/projects/framework/notes.txt .
 cp -r ~/Desktop/projects/framework/Procfile .
 cp -r ~/Desktop/projects/framework/requirements.txt .
 cp -r ~/Desktop/projects/framework/todo.txt .
 cp -r ~/Desktop/projects/framework/webpack.config.js .
+touch .env
 npm init -y
 npm i -D @babel/core @babel/preset-env @babel/preset-react 
 npm i -D axios babel-loader babel-plugin-transform-class-properties 
