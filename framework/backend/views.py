@@ -9,16 +9,18 @@ import requests
 from pymongo import MongoClient
 @csrf_exempt
 def backendView(request):
-    info = json.loads(request.body.decode("utf-8"))
     try:
-        client = MongoClient("localhost",27017)
-        db = client["project_name"]
-        table = db["model"]
-        data = table.find(show_record_id=False)
-        model =  pd.DataFrame(list(data))
-        m = pickle.loads(model["model"].item())
-        complete = info
-        complete["prediction"] = int(m.predict(pd.DataFrame([info])))
+        info = json.loads(request.body.decode("utf-8"))
+    if request.method == "GET":
+        complete = {}
+    elif request.method == "DELETE":
+        complete = {}
+    elif request.method == "UPDATE":
+        complete = {}
+    elif request.method == "POST":
+        complete = {}
+    else:
+        complete = {}
     except Exception as e:
         complete = info
         complete["prediction"] = "not found"
