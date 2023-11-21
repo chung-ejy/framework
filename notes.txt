@@ -28,3 +28,4 @@ DATABASES = {
 
 
 3. update the Procfile app name
+4. run npm run build and fix errors
